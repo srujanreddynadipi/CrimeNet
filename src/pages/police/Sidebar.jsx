@@ -1,9 +1,12 @@
 import React from 'react';
-import { BarChart3, FileText, MapPin, MessageSquare, TrendingUp, Users, AlertTriangle, Lock, Phone } from 'lucide-react';
+import { BarChart3, FileText, MapPin, MessageSquare, TrendingUp, Users, AlertTriangle, Lock, Phone, AlertOctagon, UserCheck } from 'lucide-react';
 
 const Sidebar = ({ activeTab, setActiveTab, isOpen, onClose }) => {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
+    { id: 'sos', label: 'SOS Monitoring', icon: AlertOctagon },
+    { id: 'assignment', label: 'Case Assignment', icon: UserCheck },
+    { id: 'report-management', label: 'Report Management', icon: FileText },
     { id: 'cases', label: 'Active Cases', icon: FileText },
     { id: 'map', label: 'Live Crime Map', icon: MapPin },
     { id: 'messages', label: 'Secure Chat', icon: MessageSquare },

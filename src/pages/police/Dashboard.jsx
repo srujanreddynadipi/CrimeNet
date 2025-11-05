@@ -8,6 +8,9 @@ import MissingPersons from './MissingPersons';
 import CommunityWatch from './CommunityWatch';
 import EvidenceVault from './EvidenceVault';
 import ReportsModule from './ReportsModule';
+import SOSMonitoring from './SOSMonitoring';
+import CaseAssignment from './CaseAssignment';
+import ReportManagementAPI from './ReportManagementAPI';
 
 const Dashboard = ({ activeTab }) => {
   const renderContent = () => {
@@ -23,6 +26,12 @@ const Dashboard = ({ activeTab }) => {
             <AnalyticsDashboard />
           </>
         );
+      case 'sos':
+        return <SOSMonitoring />;
+      case 'assignment':
+        return <CaseAssignment />;
+      case 'report-management':
+        return <ReportManagementAPI />;
       case 'cases':
         return <ActiveCasesTable />;
       case 'map':
