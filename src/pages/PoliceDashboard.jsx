@@ -684,7 +684,7 @@ export default function App() {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-gray-50">
       <DashboardHeader 
         officer={officer} 
         onMenuToggle={() => setSidebarOpen(!sidebarOpen)}

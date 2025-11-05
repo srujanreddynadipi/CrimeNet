@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { User, Phone, Video, Camera, Mic, FileText, Send } from 'lucide-react';
-import { mockMessages } from './mockData';
+// import { mockMessages } from './delete/mockData';
+
+const mockMessages = [
+  { id: 1, user: 'Officer John', message: 'Case update', time: '2m ago', unread: true },
+  { id: 2, user: 'Station Head', message: 'Shift details', time: '1h ago', unread: false },
+  { id: 3, user: 'Evidence Team', message: 'Evidence logged', time: '3h ago', unread: false },
+];
 
 const SecureChat = () => {
   const [message, setMessage] = useState('');
-  const [selectedUser, setSelectedUser] = useState(mockMessages[0].user);
+  const [selectedUser, setSelectedUser] = useState(mockMessages[0]?.user || 'Officer');
 
   return (
     <div className="grid lg:grid-cols-3 gap-6">

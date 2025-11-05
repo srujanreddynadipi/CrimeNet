@@ -93,10 +93,10 @@ const StatsCards = () => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-xl animate-pulse">
-            <div className="h-12 w-12 bg-gray-700 rounded-xl mb-4"></div>
-            <div className="h-4 bg-gray-700 rounded w-24 mb-2"></div>
-            <div className="h-8 bg-gray-700 rounded w-16"></div>
+          <div key={i} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg animate-pulse">
+            <div className="h-12 w-12 bg-gray-200 rounded-xl mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded w-24 mb-2"></div>
+            <div className="h-8 bg-gray-200 rounded w-16"></div>
           </div>
         ))}
       </div>
@@ -106,17 +106,17 @@ const StatsCards = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
       {stats.map((stat, idx) => (
-        <div key={idx} className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+        <div key={idx} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
           <div className="flex items-center justify-between mb-4">
-            <div className={`w-12 h-12 bg-linear-to-br ${stat.color} rounded-xl flex items-center justify-center`}>
+            <div className={`w-12 h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center`}>
               <stat.icon className="w-6 h-6 text-white" />
             </div>
-            <span className={`text-sm font-bold ${stat.change.startsWith('+') ? 'text-green-400' : 'text-red-400'}`}>
+            <span className={`text-sm font-bold ${stat.change.startsWith('+') ? 'text-green-600' : 'text-red-600'}`}>
               {stat.change}
             </span>
           </div>
-          <p className="text-gray-400 text-sm mb-1">{stat.label}</p>
-          <p className="text-3xl font-bold text-white">{stat.value}</p>
+          <p className="text-gray-500 text-sm mb-1">{stat.label}</p>
+          <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
         </div>
       ))}
     </div>
