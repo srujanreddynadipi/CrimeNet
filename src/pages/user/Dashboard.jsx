@@ -21,14 +21,12 @@ const Dashboard = ({ activeTab, setActiveTab }) => {
         return (
           <>
             <QuickStatsAPI />
-            <QuickActions setActiveTab={setActiveTab} />
             <div className="grid lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2">
                 <MyCasesAPI />
               </div>
               <div>
                 <SafetyTips />
-                <CommunityFeed />
               </div>
             </div>
           </>
@@ -43,10 +41,8 @@ const Dashboard = ({ activeTab, setActiveTab }) => {
         return <MissingPersonsAPI />;
       case 'alerts':
         return <SafetyAlertsAPI />;
-      case 'community':
-        return <CommunityFeed />;
       case 'resources':
-        return <HelpResources />;
+        return <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg"><p className="text-gray-900">Help Resources - Coming Soon</p></div>;
       case 'tips':
         return <AnonymousTips />;
       case 'track-tip':
