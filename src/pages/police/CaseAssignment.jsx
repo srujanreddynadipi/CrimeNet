@@ -114,16 +114,16 @@ const CaseAssignment = () => {
 
   if (loading) {
     return (
-      <div className="bg-white rounded-lg shadow p-8 text-center">
+      <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl shadow-xl p-8 text-center border border-cyan-100">
         <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-indigo-600 border-t-transparent"></div>
-        <p className="mt-4 text-slate-600">Loading cases...</p>
+        <p className="mt-4 text-slate-700 font-medium">Loading cases...</p>
       </div>
     );
   }
 
   return (
     <div className="space-y-6">
-      <div>
+      <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-4 border border-cyan-100">
         <h2 className="text-2xl font-bold text-slate-800">Case Assignment</h2>
         <p className="text-slate-600 mt-1">Assign unassigned cases to officers for investigation</p>
       </div>
@@ -136,8 +136,8 @@ const CaseAssignment = () => {
       )}
 
       {unassignedReports.length === 0 ? (
-        <div className="bg-white rounded-lg shadow p-12 text-center">
-          <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-xl p-12 text-center border border-green-100">
+          <CheckCircle2 className="w-16 h-16 text-green-600 mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-slate-800 mb-2">No Unassigned Cases</h3>
           <p className="text-slate-600">All submitted reports have been assigned to officers.</p>
         </div>
@@ -145,17 +145,17 @@ const CaseAssignment = () => {
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Cases List */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-slate-800">Unassigned Reports ({unassignedReports.length})</h3>
+            <h3 className="text-lg font-semibold text-slate-800 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-3 border border-indigo-100">Unassigned Reports ({unassignedReports.length})</h3>
             
             <div className="space-y-3 max-h-[600px] overflow-y-auto">
               {unassignedReports.map((report) => (
                 <div
                   key={report.reportId}
                   onClick={() => setSelectedReport(report)}
-                  className={`bg-white rounded-lg shadow border-2 p-4 cursor-pointer transition ${
+                  className={`bg-gradient-to-br rounded-xl shadow-md border-2 p-4 cursor-pointer transition ${
                     selectedReport?.reportId === report.reportId
-                      ? 'border-indigo-600 bg-indigo-50'
-                      : 'border-slate-200 hover:border-indigo-400'
+                      ? 'border-indigo-600 from-indigo-50 to-purple-50'
+                      : 'border-slate-200 hover:border-indigo-400 from-white to-slate-50'
                   }`}
                 >
                   <div className="flex items-start justify-between mb-3">

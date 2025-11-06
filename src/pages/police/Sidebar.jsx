@@ -45,14 +45,7 @@ const Sidebar = ({ activeTab, setActiveTab, isOpen, onClose }) => {
           ))}
         </nav>
 
-        <div className="absolute bottom-4 left-4 right-4 bg-red-50 rounded-xl p-4 border border-red-200">
-          <p className="text-gray-900 font-bold mb-2">Emergency Support</p>
-          <p className="text-gray-600 text-sm mb-3">24/7 Control Room</p>
-          <button className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg font-bold flex items-center justify-center space-x-2 transition-all">
-            <Phone className="w-4 h-4" />
-            <span>Call Now</span>
-          </button>
-        </div>
+        {/* Emergency support card removed per request */}
       </aside>
     </>
   );

@@ -87,16 +87,16 @@ const SOSMonitoring = () => {
 
   if (loading) {
     return (
-      <div className="bg-white rounded-lg shadow p-8 text-center">
-        <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-indigo-600 border-t-transparent"></div>
-        <p className="mt-4 text-slate-600">Loading SOS alerts...</p>
+      <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl shadow-xl p-8 text-center border border-red-100">
+        <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-red-600 border-t-transparent"></div>
+        <p className="mt-4 text-slate-700 font-medium">Loading SOS alerts...</p>
       </div>
     );
   }
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-4 border border-red-100">
         <div>
           <h2 className="text-2xl font-bold text-slate-800">Live SOS Monitoring</h2>
           <p className="text-slate-600 mt-1">Real-time emergency alerts requiring immediate attention</p>
@@ -117,8 +117,8 @@ const SOSMonitoring = () => {
       )}
 
       {alerts.length === 0 ? (
-        <div className="bg-white rounded-lg shadow p-12 text-center">
-          <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-xl p-12 text-center border border-green-100">
+          <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-slate-800 mb-2">No Active SOS Alerts</h3>
           <p className="text-slate-600">All emergencies are currently resolved or there are no active alerts.</p>
         </div>
@@ -127,7 +127,7 @@ const SOSMonitoring = () => {
           {alerts.map((alert) => (
             <div
               key={alert.sosId}
-              className={`bg-white rounded-lg shadow-md border-l-4 ${
+              className={`bg-gradient-to-br from-white to-red-50/30 rounded-2xl shadow-lg border-l-4 ${
                 alert.status === 'TRIGGERED' ? 'border-red-500 animate-pulse' : 'border-orange-500'
               } p-6`}
             >

@@ -168,21 +168,7 @@ const Sidebar = ({ activeTab, setActiveTab, isOpen, onClose }) => {
           ))}
         </nav>
         
-        <div className="absolute bottom-4 left-4 right-4 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl p-4 shadow-xl">
-          <div className="flex items-center space-x-3 mb-3">
-            <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-              <Phone className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <p className="text-white font-bold text-sm">Emergency</p>
-              <p className="text-white/80 text-xs">24/7 Support</p>
-            </div>
-          </div>
-          <button className="w-full bg-white hover:bg-gray-100 text-red-600 py-2 rounded-xl font-bold transition-all flex items-center justify-center space-x-2">
-            <Zap className="w-4 h-4" />
-            <span>Call 100</span>
-          </button>
-        </div>
+        {/* Emergency card removed per request */}
       </aside>
     </>
   );

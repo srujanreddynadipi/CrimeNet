@@ -3,8 +3,8 @@ import StatsCards from './StatsCards';
 import ActiveCasesTable from './ActiveCasesTable';
 import LiveCrimeMap from './LiveCrimeMap';
 import SecureChat from './SecureChat';
-// import MissingPersons from './MissingPersons';
-// import CommunityWatch from './CommunityWatch';
+import MissingPersons from './MissingPersons';
+import CommunityWatch from './CommunityWatch';
 // import ReportsModule from './ReportsModule';
 import SOSMonitoring from './SOSMonitoring';
 import CaseAssignment from './CaseAssignment';
@@ -41,13 +41,13 @@ const Dashboard = ({ activeTab }) => {
       case 'analytics':
         return <AnalyticsDashboardAPI />;
       case 'community':
-        return <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg"><p className="text-gray-900">Community Watch - Coming Soon</p></div>;
+        return <CommunityWatch />;
       case 'missing':
-        return <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg"><p className="text-gray-900">Missing Persons - Coming Soon</p></div>;
+        return <MissingPersons />;
       case 'evidence':
         return <EvidenceVaultAPI />;
       case 'reports':
-        return <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg"><p className="text-gray-900">Reports Module - Coming Soon</p></div>;
+        return <ReportManagementAPI />;
       default:
         return <StatsCards />;
     }

@@ -3,21 +3,21 @@ import { MapPin, RefreshCw } from 'lucide-react';
 
 const LiveCrimeMap = () => {
   return (
-    <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-xl">
+    <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100 shadow-xl">
       <div className="flex justify-between items-center mb-6">
-        <h3 className="text-2xl font-bold text-white">Live Crime Map</h3>
+        <h3 className="text-2xl font-bold text-gray-900">Live Crime Map</h3>
         <div className="flex space-x-2">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all flex items-center space-x-2">
+          <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition-all flex items-center space-x-2">
             <RefreshCw className="w-4 h-4" />
             <span>Refresh</span>
           </button>
-          <button className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg font-medium transition-all border border-white/20">
+          <button className="bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg font-medium transition-all border border-gray-300">
             Filters
           </button>
         </div>
       </div>
 
-      <div className="bg-gradient-to-br from-blue-900 to-purple-900 rounded-xl h-96 flex items-center justify-center border border-white/20 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-blue-900 to-purple-900 rounded-xl h-96 flex items-center justify-center border border-gray-200 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-10 left-10 w-32 h-32 bg-red-500 rounded-full filter blur-3xl animate-pulse" />
           <div className="absolute bottom-10 right-10 w-32 h-32 bg-yellow-500 rounded-full filter blur-3xl animate-pulse" />

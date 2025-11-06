@@ -71,15 +71,6 @@ const StatsOverview = () => {
         bg: 'bg-pink-50', 
         trend: 'up' 
       },
-      { 
-        label: 'System Health', 
-        value: '99.9%', 
-        change: '+0.2%', 
-        icon: Star, 
-        gradient: 'from-yellow-400 to-yellow-600', 
-        bg: 'bg-yellow-50', 
-        trend: 'up' 
-      },
     ];
   };
 

@@ -1,50 +1,47 @@
 import React from 'react';
-import { AlertTriangle, User, Bell } from 'lucide-react';
+import { Search, User, Calendar, MapPin } from 'lucide-react';
 
 const MissingPersons = () => {
-  const missingPersons = [
-    { id: 'MP001', name: 'Rahul Verma', age: 28, location: 'Last seen: Bangalore', date: '2 days ago', image: true },
-    { id: 'MP002', name: 'Priya Nair', age: 16, location: 'Last seen: Chennai', date: '5 days ago', image: true },
-    { id: 'MP003', name: 'Amit Shah', age: 45, location: 'Last seen: Delhi', date: '1 week ago', image: true },
+  const records = [
+    { id: 'MP-001', name: 'Rahul Sharma', age: 17, lastSeen: '2025-11-01', location: 'Indiranagar' },
+    { id: 'MP-002', name: 'Aisha Khan', age: 22, lastSeen: '2025-10-28', location: 'Koramangala' },
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h3 className="text-2xl font-bold text-white">Missing Persons Database</h3>
-        <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-bold transition-all flex items-center space-x-2">
-          <AlertTriangle className="w-5 h-5" />
-          <span>Report New Case</span>
-        </button>
+    <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-100 shadow-xl">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+        <h3 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+          <Search className="w-6 h-6 text-amber-600" /> Missing Persons
+        </h3>
+        <div className="relative w-full md:w-80">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <input className="w-full bg-white border border-gray-300 rounded-xl pl-10 pr-4 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Search by name or ID" />
+        </div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {missingPersons.map((person) => (
-          <div key={person.id} className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl overflow-hidden">
-            <div className="bg-gradient-to-br from-red-900 to-orange-900 h-48 flex items-center justify-center">
-              <User className="w-24 h-24 text-white opacity-50" />
-            </div>
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-red-400 font-bold text-sm bg-red-500/20 px-3 py-1 rounded-full">
-                  {person.id}
-                </span>
-                <span className="text-gray-400 text-xs">{person.date}</span>
-              </div>
-              <h4 className="text-white font-bold text-xl mb-2">{person.name}</h4>
-              <p className="text-gray-400 text-sm mb-1">Age: {person.age}</p>
-              <p className="text-gray-400 text-sm mb-4">{person.location}</p>
-              <div className="flex space-x-2">
-                <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium transition-all">
-                  View Details
-                </button>
-                <button className="bg-white/10 hover:bg-white/20 text-white p-2 rounded-lg transition-all border border-white/20">
-                  <Bell className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="overflow-x-auto bg-white/60 backdrop-blur-sm rounded-xl shadow-md">
+        <table className="w-full">
+          <thead>
+            <tr className="border-b border-amber-200">
+              <th className="text-left text-gray-700 font-semibold py-3 px-4">ID</th>
+              <th className="text-left text-gray-700 font-semibold py-3 px-4">Name</th>
+              <th className="text-left text-gray-700 font-semibold py-3 px-4">Age</th>
+              <th className="text-left text-gray-700 font-semibold py-3 px-4">Last Seen</th>
+              <th className="text-left text-gray-700 font-semibold py-3 px-4">Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            {records.map(r => (
+              <tr key={r.id} className="border-b border-amber-100 hover:bg-white/70 transition-all">
+                <td className="py-3 px-4 text-gray-900 font-semibold">{r.id}</td>
+                <td className="py-3 px-4 text-gray-800 flex items-center gap-2"><User className="w-4 h-4 text-indigo-600" /> {r.name}</td>
+                <td className="py-3 px-4 text-gray-700">{r.age}</td>
+                <td className="py-3 px-4 text-gray-700 flex items-center gap-2"><Calendar className="w-4 h-4 text-gray-500" /> {r.lastSeen}</td>
+                <td className="py-3 px-4 text-gray-700 flex items-center gap-2"><MapPin className="w-4 h-4 text-indigo-600" /> {r.location}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
