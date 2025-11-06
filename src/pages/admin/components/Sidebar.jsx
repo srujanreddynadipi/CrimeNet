@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           ))}
         </nav>
         
-        <div className="absolute bottom-4 left-4 right-4 bg-linear-to-br from-blue-500 to-purple-600 rounded-2xl p-4 shadow-xl">
+        {/* <div className="absolute bottom-4 left-4 right-4 bg-linear-to-br from-blue-500 to-purple-600 rounded-2xl p-4 shadow-xl">
           <div className="flex items-center space-x-3 mb-3">
             <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
               <ShieldAlert className="w-6 h-6 text-white" />
@@ -76,7 +76,7 @@ const Sidebar = ({ isOpen, onClose }) => {
               <p className="text-white font-bold text-sm">42%</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </aside>
     </>
   );
